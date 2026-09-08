@@ -1627,7 +1627,30 @@ textarea {
   flex-shrink: 0;
 }
 
-/* === WHY CHOOSE US === */
+/* === WHY CHOOSE US (Creamish Golden Background) === */
+#why {
+  background: linear-gradient(135deg, #FAF0DD 0%, #F5EBDA 100%);
+  border-top: 1px solid #E8D9BF;
+  border-bottom: 1px solid #E8D9BF;
+  color: #1E1610;
+}
+
+#why .section-title-center,
+#why .text-white {
+  color: #1E1610 !important;
+}
+
+#why .section-subtitle,
+#why .text-light-muted {
+  color: #5C4E43 !important;
+}
+
+#why .badge-light {
+  background: rgba(196, 30, 58, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(196, 30, 58, 0.3);
+}
+
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1635,25 +1658,27 @@ textarea {
 }
 
 .why-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1.5px solid #E8D9BF;
   border-radius: var(--radius-lg);
   padding: 2rem;
   transition: var(--transition);
   text-align: center;
+  box-shadow: 0 4px 20px rgba(180, 140, 90, 0.08);
 }
 
 .why-card:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
   transform: translateY(-4px);
-  border-color: rgba(196, 30, 58, 0.5);
+  border-color: var(--primary);
+  box-shadow: 0 12px 35px rgba(196, 30, 58, 0.15);
 }
 
 .why-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, rgba(196, 30, 58, 0.25), rgba(196, 30, 58, 0.12));
-  border: 1.5px solid rgba(196, 30, 58, 0.5);
+  background: rgba(196, 30, 58, 0.1);
+  border: 1.5px solid rgba(196, 30, 58, 0.3);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -1673,13 +1698,13 @@ textarea {
 .why-title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--white);
+  color: #1E1610;
   margin-bottom: 0.5rem;
 }
 
 .why-desc {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: #5C4E43;
   line-height: 1.65;
 }
 
