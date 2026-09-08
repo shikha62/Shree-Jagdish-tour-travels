@@ -1,33 +1,48 @@
 /* =====================================================
    SHREE JAGDISH TOUR & TRAVELS -- style.css
-   Modern, Premium Indian Travel & Taxi Website Design System
-   Color Palette: Deep Navy (#0F1B2D) + Primary Orange (#F47B20) + Clean White
+   Premium Royal Design System — Logo Theme
+   Color Palette: Jet Black + Crimson Red + Royal Gold
    Fonts: Outfit (Headings) + Inter (Body)
    ===================================================== */
 
 :root {
-  --primary: #F47B20;
-  --primary-dark: #D9640D;
-  --primary-light: rgba(244, 123, 32, 0.12);
-  --navy: #0F1B2D;
-  --navy-light: #1A2B42;
-  --navy-ultra-light: #F0F4F8;
-  --charcoal: #1E293B;
-  --text-muted: #64748B;
-  --light-bg: #F8FAFC;
+  /* === BRAND COLORS (from logo) === */
+  --primary: #C41E3A;                        /* Crimson Red */
+  --primary-dark: #9B1530;                   /* Deep Crimson */
+  --primary-light: rgba(196, 30, 58, 0.12);  /* Crimson tint */
+
+  --gold: #D4AF37;                           /* Royal Gold */
+  --gold-dark: #B8960C;                      /* Deep Gold */
+  --gold-light: rgba(212, 175, 55, 0.15);    /* Gold tint */
+
+  /* === DARK PALETTE === */
+  --black: #0A0A0A;                          /* Jet Black */
+  --dark: #111111;                           /* Rich Black */
+  --dark-mid: #1A1A1A;                       /* Charcoal Black */
+  --charcoal: #2A2A2A;                       /* Dark Charcoal */
+
+  /* === LEGACY ALIASES (for backward compat) === */
+  --navy: #0A0A0A;
+  --navy-light: #1A1A1A;
+  --navy-ultra-light: #F8F5EE;
+
+  /* === NEUTRAL === */
   --white: #FFFFFF;
-  --border: #E2E8F0;
-  --border-light: #F1F5F9;
-  --gold: #FFB703;
-  --green: #10B981;
+  --light-bg: #F8F5EE;                       /* Warm Cream */
+  --border: #DED8CC;
+  --border-light: #EDE8DF;
+  --text-muted: #6B6560;
+  --green: #10B981;                          /* WhatsApp Green */
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 35px rgba(15, 27, 45, 0.12);
-  --shadow-xl: 0 20px 50px rgba(15, 27, 45, 0.18);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.18);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.24);
+  --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.3);
+  --shadow-red: 0 8px 32px rgba(196, 30, 58, 0.3);
 
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -111,12 +126,19 @@ textarea {
 }
 
 .section-dark {
-  background-color: var(--navy);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.section-gold {
+  background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   color: var(--white);
 }
 
 .section-orange {
-  background: linear-gradient(135deg, #F47B20 0%, #D9640D 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: var(--white);
 }
 
@@ -156,7 +178,7 @@ textarea {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 800;
-  color: var(--navy);
+  color: var(--dark);
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
@@ -165,7 +187,7 @@ textarea {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 800;
-  color: var(--navy);
+  color: var(--dark);
   line-height: 1.2;
   letter-spacing: -0.02em;
   text-align: center;
@@ -184,10 +206,18 @@ textarea {
 }
 
 .text-dark-accent {
-  color: #FFF0E6 !important;
+  color: var(--gold) !important;
 }
 
 .accent-text {
+  color: var(--gold);
+}
+
+.gold-text {
+  color: var(--gold);
+}
+
+.red-text {
   color: var(--primary);
 }
 
@@ -223,15 +253,30 @@ textarea {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: var(--white) !important;
-  box-shadow: 0 6px 20px rgba(244, 123, 32, 0.35);
+  box-shadow: var(--shadow-red);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(244, 123, 32, 0.45);
+  box-shadow: 0 12px 36px rgba(196, 30, 58, 0.5);
   color: var(--white) !important;
+  background: linear-gradient(135deg, #D9213F 0%, var(--primary) 100%);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--black) !important;
+  box-shadow: var(--shadow-gold);
+  font-weight: 800;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(212, 175, 55, 0.5);
+  color: var(--black) !important;
+  background: linear-gradient(135deg, #E8C547 0%, var(--gold) 100%);
 }
 
 .btn-secondary {
@@ -293,11 +338,11 @@ textarea {
 
 /* === TOP BAR === */
 .topbar {
-  background: var(--navy);
-  color: rgba(255, 255, 255, 0.88);
+  background: var(--black);
+  color: rgba(255, 255, 255, 0.80);
   font-size: 0.82rem;
   padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   width: 100%;
 }
 
@@ -325,19 +370,19 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.80);
   text-decoration: none;
   transition: var(--transition-fast);
 }
 
 .topbar-left span i,
 .topbar-right a i {
-  color: var(--primary);
+  color: var(--gold);
   font-size: 0.85rem;
 }
 
 .topbar-right a:hover {
-  color: var(--primary);
+  color: var(--gold);
 }
 
 /* === HEADER / NAV === */
@@ -345,16 +390,16 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-light);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   transition: var(--transition);
 }
 
 .header.scrolled {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 175, 55, 0.15);
 }
 
 .nav-container {
@@ -398,7 +443,7 @@ textarea {
   justify-content: center;
   color: var(--white);
   font-size: 1.2rem;
-  box-shadow: 0 2px 10px rgba(244, 123, 32, 0.3);
+  box-shadow: 0 2px 10px rgba(196, 30, 58, 0.4);
 }
 
 .logo-text {
@@ -411,7 +456,7 @@ textarea {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.05rem;
-  color: var(--navy);
+  color: var(--white);
   letter-spacing: 0.04em;
 }
 
@@ -419,8 +464,8 @@ textarea {
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 0.68rem;
-  color: var(--primary);
-  letter-spacing: 0.08em;
+  color: var(--gold);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -436,7 +481,7 @@ textarea {
   border-radius: var(--radius-full);
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--charcoal);
+  color: rgba(255, 255, 255, 0.80);
   transition: var(--transition-fast);
   position: relative;
   white-space: nowrap;
@@ -445,8 +490,8 @@ textarea {
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--primary);
-  background: var(--primary-light);
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.1);
 }
 
 .mobile-nav-actions {
@@ -476,7 +521,7 @@ textarea {
   display: block;
   width: 100%;
   height: 2.5px;
-  background: var(--charcoal);
+  background: var(--gold);
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -496,7 +541,7 @@ textarea {
 /* === HERO === */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, var(--navy) 0%, #17263C 100%);
+  background: linear-gradient(135deg, #0A0A0A 0%, #111111 100%);
   color: var(--white);
   overflow: hidden;
   padding: 4.5rem 0 5.5rem;
@@ -519,7 +564,7 @@ textarea {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(15, 27, 45, 0.65) 0%, rgba(15, 27, 45, 0.35) 60%, rgba(15, 27, 45, 0.10) 100%);
+  background: linear-gradient(90deg, rgba(10, 10, 10, 0.80) 0%, rgba(10, 10, 10, 0.50) 55%, rgba(10, 10, 10, 0.20) 100%);
   z-index: 2;
 }
 
@@ -534,9 +579,9 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(244, 123, 32, 0.25);
-  border: 1px solid rgba(244, 123, 32, 0.6);
-  color: #FF9F4D;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: var(--gold);
   padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
@@ -557,7 +602,7 @@ textarea {
 }
 
 .hero-title .accent-text {
-  color: var(--primary) !important;
+  color: var(--gold) !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -591,7 +636,7 @@ textarea {
 }
 
 .hf-item i {
-  color: var(--primary);
+  color: var(--gold);
 }
 
 .hero-buttons {
@@ -611,7 +656,7 @@ textarea {
 }
 
 .hero-trust i {
-  color: var(--primary);
+  color: var(--gold);
 }
 
 /* === BOOKING WIDGET === */
@@ -630,10 +675,11 @@ textarea {
 }
 
 .booking-header {
-  background: var(--navy);
+  background: var(--black);
   color: var(--white);
   padding: 1.4rem 1.8rem;
   text-align: center;
+  border-bottom: 2px solid var(--gold);
 }
 
 .booking-title {
@@ -678,7 +724,7 @@ textarea {
   background: var(--primary);
   color: var(--white);
   border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(244, 123, 32, 0.3);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
 }
 
 .booking-form {
@@ -869,15 +915,15 @@ textarea {
 }
 
 .indore-badge i {
-  color: var(--primary);
+  color: var(--gold);
 }
 
 /* === STATS BAR === */
 .stats-bar {
-  background: var(--navy);
+  background: var(--black);
   color: var(--white);
   padding: 2.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .stats-inner {
@@ -900,7 +946,7 @@ textarea {
   font-family: var(--font-heading);
   font-size: 2.8rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--gold);
   line-height: 1;
   margin-bottom: 0.4rem;
 }
@@ -914,7 +960,7 @@ textarea {
 .stat-divider {
   width: 1px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(212, 175, 55, 0.2);
 }
 
 /* === SERVICES GRID === */
@@ -937,7 +983,7 @@ textarea {
 }
 
 .service-card:hover {
-  border-color: rgba(244, 123, 32, 0.4);
+  border-color: rgba(196, 30, 58, 0.35);
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
 }
@@ -1032,14 +1078,14 @@ textarea {
 }
 
 .route-chip i {
-  color: var(--primary);
+  color: var(--gold);
   font-size: 0.8rem;
 }
 
 .accent-chip {
-  background: var(--primary-light);
-  border-color: rgba(244, 123, 32, 0.3);
-  color: var(--primary-dark);
+  background: var(--gold-light);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: var(--gold-dark);
 }
 
 .route-note {
@@ -1052,7 +1098,7 @@ textarea {
 }
 
 .route-note i {
-  color: var(--primary);
+  color: var(--gold);
 }
 
 .visual-card {
@@ -1070,7 +1116,7 @@ textarea {
 }
 
 .visual-badge-bottom {
-  background: var(--navy);
+  background: var(--black);
   color: var(--white);
   padding: 1.2rem 1.6rem;
   display: flex;
@@ -1078,6 +1124,7 @@ textarea {
   justify-content: space-around;
   gap: 1rem;
   text-align: center;
+  border-top: 2px solid var(--gold);
 }
 
 .visual-badge-bottom>div {
@@ -1088,7 +1135,7 @@ textarea {
 
 .vb-label {
   font-size: 0.72rem;
-  color: var(--primary);
+  color: var(--gold);
   font-weight: 700;
   text-transform: uppercase;
   display: block;
@@ -1104,7 +1151,7 @@ textarea {
 
 .vb-arrow {
   font-size: 1.4rem;
-  color: var(--primary);
+  color: var(--gold);
 }
 
 .roundtrip-visual {
@@ -1232,8 +1279,8 @@ textarea {
 
 .fleet-card-single:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(244, 123, 32, 0.15);
-  border-color: rgba(244, 123, 32, 0.3);
+  box-shadow: 0 16px 48px rgba(196, 30, 58, 0.15);
+  border-color: rgba(196, 30, 58, 0.3);
 }
 
 .fleet-card-single .fleet-img {
@@ -1599,28 +1646,28 @@ textarea {
 .why-card:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-4px);
-  border-color: rgba(244, 123, 32, 0.4);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .why-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, rgba(244, 123, 32, 0.2), rgba(244, 123, 32, 0.1));
-  border: 1.5px solid rgba(244, 123, 32, 0.3);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+  color: var(--gold);
   font-size: 1.4rem;
   margin: 0 auto 1.2rem;
   transition: var(--transition);
 }
 
 .why-card:hover .why-icon {
-  background: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
 }
 
 .why-title {
@@ -1676,8 +1723,8 @@ textarea {
 .ci-icon {
   width: 44px;
   height: 44px;
-  background: var(--primary-light);
-  color: var(--primary);
+  background: var(--gold-light);
+  color: var(--gold-dark);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1785,10 +1832,11 @@ textarea {
 
 /* === FINAL CTA SECTION === */
 .section-cta {
-  background: linear-gradient(135deg, var(--navy) 0%, #17263C 100%);
+  background: linear-gradient(135deg, var(--black) 0%, #171717 100%);
   color: var(--white);
   padding: 5rem 0;
   text-align: center;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .cta-inner {
@@ -2007,7 +2055,7 @@ textarea {
 }
 
 .faq-icon {
-  color: var(--primary);
+  color: var(--gold);
   font-size: 0.8rem;
   flex-shrink: 0;
   transition: transform 0.3s ease;
@@ -2037,10 +2085,11 @@ textarea {
 
 /* === FOOTER === */
 .footer {
-  background: var(--navy);
+  background: var(--black);
   color: rgba(255, 255, 255, 0.8);
   padding-top: 4rem;
   font-size: 0.9rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .footer-top {
@@ -2140,7 +2189,7 @@ textarea {
   bottom: 0;
   width: 36px;
   height: 2.5px;
-  background: var(--primary);
+  background: var(--gold);
   border-radius: 2px;
 }
 
@@ -2167,7 +2216,7 @@ textarea {
 }
 
 .footer-links-arrow a i {
-  color: var(--primary);
+  color: var(--gold);
   font-size: 0.72rem;
   flex-shrink: 0;
 }
@@ -2189,7 +2238,7 @@ textarea {
 }
 
 .footer-contact-list li i {
-  color: var(--primary);
+  color: var(--gold);
   font-size: 1rem;
   margin-top: 0.1rem;
   flex-shrink: 0;
