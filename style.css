@@ -11,9 +11,9 @@
   --primary-dark: #9B1530;                   /* Deep Crimson */
   --primary-light: rgba(196, 30, 58, 0.12);  /* Crimson tint */
 
-  --gold: #D4AF37;                           /* Royal Gold */
-  --gold-dark: #B8960C;                      /* Deep Gold */
-  --gold-light: rgba(212, 175, 55, 0.15);    /* Gold tint */
+  --gold: #C41E3A;                           /* Red Accent */
+  --gold-dark: #9B1530;                      /* Deep Red Accent */
+  --gold-light: rgba(196, 30, 58, 0.15);    /* Red tint */
 
   /* === DARK PALETTE === */
   --black: #0A0A0A;                          /* Jet Black */
@@ -41,7 +41,7 @@
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.18);
   --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.24);
-  --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.3);
+  --shadow-gold: 0 8px 32px rgba(196, 30, 58, 0.3);
   --shadow-red: 0 8px 32px rgba(196, 30, 58, 0.3);
 
   --radius-sm: 6px;
@@ -132,8 +132,8 @@ textarea {
 
 .section-gold {
   background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%);
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-top: 1px solid rgba(196, 30, 58, 0.25);
+  border-bottom: 1px solid rgba(196, 30, 58, 0.25);
   color: var(--white);
 }
 
@@ -206,15 +206,15 @@ textarea {
 }
 
 .text-dark-accent {
-  color: var(--gold) !important;
+  color: var(--primary) !important;
 }
 
 .accent-text {
-  color: var(--gold);
+  color: var(--primary);
 }
 
 .gold-text {
-  color: var(--gold);
+  color: var(--primary);
 }
 
 .red-text {
@@ -342,7 +342,7 @@ textarea {
   color: rgba(255, 255, 255, 0.80);
   font-size: 0.82rem;
   padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(196, 30, 58, 0.25);
   width: 100%;
 }
 
@@ -393,13 +393,13 @@ textarea {
   background: rgba(10, 10, 10, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1px solid rgba(196, 30, 58, 0.25);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   transition: var(--transition);
 }
 
 .header.scrolled {
-  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(196, 30, 58, 0.2);
 }
 
 .nav-container {
@@ -490,8 +490,8 @@ textarea {
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--gold);
-  background: rgba(212, 175, 55, 0.1);
+  color: var(--primary);
+  background: rgba(196, 30, 58, 0.12);
 }
 
 .mobile-nav-actions {
@@ -579,9 +579,9 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  color: var(--gold);
+  background: rgba(196, 30, 58, 0.15);
+  border: 1px solid rgba(196, 30, 58, 0.5);
+  color: #FF4D6D;
   padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
@@ -679,7 +679,7 @@ textarea {
   color: var(--white);
   padding: 1.4rem 1.8rem;
   text-align: center;
-  border-bottom: 2px solid var(--gold);
+  border-bottom: 2px solid var(--primary);
 }
 
 .booking-title {
@@ -923,7 +923,7 @@ textarea {
   background: var(--black);
   color: var(--white);
   padding: 2.5rem 0;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(196, 30, 58, 0.2);
 }
 
 .stats-inner {
@@ -946,7 +946,7 @@ textarea {
   font-family: var(--font-heading);
   font-size: 2.8rem;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--primary);
   line-height: 1;
   margin-bottom: 0.4rem;
 }
@@ -960,7 +960,7 @@ textarea {
 .stat-divider {
   width: 1px;
   height: 50px;
-  background: rgba(212, 175, 55, 0.2);
+  background: rgba(196, 30, 58, 0.25);
 }
 
 /* === SERVICES GRID === */
@@ -1646,28 +1646,28 @@ textarea {
 .why-card:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-4px);
-  border-color: rgba(212, 175, 55, 0.4);
+  border-color: rgba(196, 30, 58, 0.5);
 }
 
 .why-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
-  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.25), rgba(196, 30, 58, 0.12));
+  border: 1.5px solid rgba(196, 30, 58, 0.5);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
+  color: var(--primary);
   font-size: 1.4rem;
   margin: 0 auto 1.2rem;
   transition: var(--transition);
 }
 
 .why-card:hover .why-icon {
-  background: var(--gold);
-  color: var(--black);
-  border-color: var(--gold);
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
 }
 
 .why-title {
