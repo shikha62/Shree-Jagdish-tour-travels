@@ -24,7 +24,7 @@
     });
 
     // Close on nav link click
-    $$('.nav-link', navLinks).forEach(function (link) {
+    $$('a', navLinks).forEach(function (link) {
       link.addEventListener('click', function () {
         hamburger.classList.remove('open');
         navLinks.classList.remove('open');
