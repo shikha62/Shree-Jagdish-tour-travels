@@ -5,7 +5,12 @@
    Fonts: Outfit (Headings) + Inter (Body)
    ===================================================== */
 
-:root {
+  /* === CREAMISH GOLDEN PALETTE === */
+  --cream-gold: #FAF0DD;                      /* Creamish Golden Main */
+  --cream-gold-light: #FFFBF2;                /* Light Golden Cream */
+  --cream-gold-dark: #F3E5C8;                 /* Deep Golden Cream */
+  --cream-border: #E8D9BF;                    /* Creamish Border */
+
   /* === BRAND COLORS (from logo) === */
   --primary: #C41E3A;                        /* Crimson Red */
   --primary-dark: #9B1530;                   /* Deep Crimson */
@@ -15,23 +20,23 @@
   --gold-dark: #9B1530;                      /* Deep Red Accent */
   --gold-light: rgba(196, 30, 58, 0.15);    /* Red tint */
 
-  /* === DARK PALETTE === */
-  --black: #0A0A0A;                          /* Jet Black */
-  --dark: #111111;                           /* Rich Black */
-  --dark-mid: #1A1A1A;                       /* Charcoal Black */
-  --charcoal: #2A2A2A;                       /* Dark Charcoal */
+  /* === DARK & NEUTRAL === */
+  --black: #FAF0DD;                          /* Creamish Golden */
+  --dark: #1E1610;                           /* Rich Dark Brown/Charcoal */
+  --dark-mid: #2C2219;                       /* Warm Dark */
+  --charcoal: #1E1610;                       /* Dark Text */
 
-  /* === LEGACY ALIASES (for backward compat) === */
-  --navy: #0A0A0A;
-  --navy-light: #1A1A1A;
-  --navy-ultra-light: #F8F5EE;
+  /* === LEGACY ALIASES === */
+  --navy: #FAF0DD;
+  --navy-light: #F3E5C8;
+  --navy-ultra-light: #FAF5EE;
 
   /* === NEUTRAL === */
   --white: #FFFFFF;
-  --light-bg: #F8F5EE;                       /* Warm Cream */
-  --border: #DED8CC;
-  --border-light: #EDE8DF;
-  --text-muted: #6B6560;
+  --light-bg: #FAF4E8;                       /* Warm Cream */
+  --border: #E8D9BF;
+  --border-light: #F2E8D8;
+  --text-muted: #5C4E43;
   --green: #10B981;                          /* WhatsApp Green */
 
   --font-heading: 'Outfit', sans-serif;
@@ -72,7 +77,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--white);
+  background-color: var(--cream-gold-light);
   color: var(--charcoal);
   line-height: 1.6;
   overflow-x: hidden;
@@ -126,15 +131,15 @@ textarea {
 }
 
 .section-dark {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--cream-gold);
+  color: #1E1610;
 }
 
 .section-gold {
-  background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%);
-  border-top: 1px solid rgba(196, 30, 58, 0.25);
-  border-bottom: 1px solid rgba(196, 30, 58, 0.25);
-  color: var(--white);
+  background: linear-gradient(135deg, #F8F0E1 0%, #EFE3CE 100%);
+  border-top: 1px solid var(--cream-border);
+  border-bottom: 1px solid var(--cream-border);
+  color: #1E1610;
 }
 
 .section-orange {
@@ -164,8 +169,9 @@ textarea {
 }
 
 .badge-light {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--gold);
+  background: rgba(196, 30, 58, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(196, 30, 58, 0.3);
 }
 
 .badge-white {
@@ -338,11 +344,11 @@ textarea {
 
 /* === TOP BAR === */
 .topbar {
-  background: var(--black);
-  color: rgba(255, 255, 255, 0.80);
+  background: #FAF2E4;
+  color: #4A3F35;
   font-size: 0.82rem;
   padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(196, 30, 58, 0.25);
+  border-bottom: 1px solid var(--cream-border);
   width: 100%;
 }
 
@@ -370,7 +376,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: rgba(255, 255, 255, 0.80);
+  color: #4A3F35;
   text-decoration: none;
   transition: var(--transition-fast);
 }
@@ -390,11 +396,11 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: rgba(10, 10, 10, 0.97);
+  background: rgba(250, 242, 228, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(196, 30, 58, 0.25);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid var(--cream-border);
+  box-shadow: 0 4px 20px rgba(180, 140, 90, 0.12);
   transition: var(--transition);
 }
 
@@ -456,7 +462,7 @@ textarea {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.05rem;
-  color: var(--white);
+  color: #1E1610;
   letter-spacing: 0.04em;
 }
 
@@ -481,7 +487,7 @@ textarea {
   border-radius: var(--radius-full);
   font-size: 0.88rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.80);
+  color: #2C2219;
   transition: var(--transition-fast);
   position: relative;
   white-space: nowrap;
@@ -521,7 +527,7 @@ textarea {
   display: block;
   width: 100%;
   height: 2.5px;
-  background: var(--gold);
+  background: #2C2219;
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -541,8 +547,8 @@ textarea {
 /* === HERO === */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #0A0A0A 0%, #111111 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, #F5EBDA 0%, #EFE3CE 100%);
+  color: #1E1610;
   overflow: hidden;
   padding: 4.5rem 0 5.5rem;
 }
@@ -564,7 +570,7 @@ textarea {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(10, 10, 10, 0.80) 0%, rgba(10, 10, 10, 0.50) 55%, rgba(10, 10, 10, 0.20) 100%);
+  background: linear-gradient(90deg, rgba(245, 235, 218, 0.94) 0%, rgba(245, 235, 218, 0.78) 60%, rgba(245, 235, 218, 0.40) 100%);
   z-index: 2;
 }
 
@@ -597,22 +603,19 @@ textarea {
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 1.2rem;
-  color: #FFFFFF !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  color: #1E1610 !important;
 }
 
 .hero-title .accent-text {
-  color: var(--gold) !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  color: var(--primary) !important;
 }
 
 .hero-subtitle {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: #5C4E43 !important;
   line-height: 1.65;
   margin-bottom: 2rem;
   max-width: 580px;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .hero-features {
@@ -626,13 +629,14 @@ textarea {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.85);
   padding: 0.4rem 0.85rem;
   border-radius: var(--radius-full);
   font-size: 0.82rem;
   font-weight: 500;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--cream-border);
+  color: #2C2219;
 }
 
 .hf-item i {
@@ -648,11 +652,10 @@ textarea {
 .hero-trust {
   margin-top: 1.5rem;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #5C4E43 !important;
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero-trust i {
@@ -675,8 +678,8 @@ textarea {
 }
 
 .booking-header {
-  background: var(--black);
-  color: var(--white);
+  background: linear-gradient(135deg, #F3E7D3 0%, #EADAC2 100%);
+  color: #1E1610;
   padding: 1.4rem 1.8rem;
   text-align: center;
   border-bottom: 2px solid var(--primary);
@@ -686,13 +689,13 @@ textarea {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--white);
+  color: #1E1610;
   margin-bottom: 0.2rem;
 }
 
 .booking-subtitle {
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #5C4E43;
 }
 
 .trip-type-selector {
@@ -920,10 +923,10 @@ textarea {
 
 /* === STATS BAR === */
 .stats-bar {
-  background: var(--black);
-  color: var(--white);
+  background: #FAF2E4;
+  color: #1E1610;
   padding: 2.5rem 0;
-  border-bottom: 1px solid rgba(196, 30, 58, 0.2);
+  border-bottom: 1px solid var(--cream-border);
 }
 
 .stats-inner {
@@ -953,14 +956,14 @@ textarea {
 
 .stat-label {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #5C4E43;
   font-weight: 500;
 }
 
 .stat-divider {
   width: 1px;
   height: 50px;
-  background: rgba(196, 30, 58, 0.25);
+  background: #E5D5BA;
 }
 
 /* === SERVICES GRID === */
@@ -1635,25 +1638,27 @@ textarea {
 }
 
 .why-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1.5px solid var(--cream-border);
   border-radius: var(--radius-lg);
   padding: 2rem;
   transition: var(--transition);
   text-align: center;
+  box-shadow: 0 4px 20px rgba(180, 140, 90, 0.08);
 }
 
 .why-card:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
   transform: translateY(-4px);
-  border-color: rgba(196, 30, 58, 0.5);
+  border-color: var(--primary);
+  box-shadow: 0 12px 35px rgba(196, 30, 58, 0.15);
 }
 
 .why-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, rgba(196, 30, 58, 0.25), rgba(196, 30, 58, 0.12));
-  border: 1.5px solid rgba(196, 30, 58, 0.5);
+  background: rgba(196, 30, 58, 0.1);
+  border: 1.5px solid rgba(196, 30, 58, 0.3);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -1673,13 +1678,13 @@ textarea {
 .why-title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--white);
+  color: #1E1610;
   margin-bottom: 0.5rem;
 }
 
 .why-desc {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: #5C4E43;
   line-height: 1.65;
 }
 
@@ -1832,11 +1837,11 @@ textarea {
 
 /* === FINAL CTA SECTION === */
 .section-cta {
-  background: linear-gradient(135deg, var(--black) 0%, #171717 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, #F5EBDA 0%, #EFE3CE 100%);
+  color: #1E1610;
   padding: 5rem 0;
   text-align: center;
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-top: 1px solid var(--cream-border);
 }
 
 .cta-inner {
@@ -2085,16 +2090,16 @@ textarea {
 
 /* === FOOTER === */
 .footer {
-  background: var(--black);
-  color: rgba(255, 255, 255, 0.8);
+  background: #FAF2E4;
+  color: #5C4E43;
   padding-top: 4rem;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-top: 1px solid var(--cream-border);
 }
 
 .footer-top {
   padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--cream-border);
 }
 
 .footer-grid {
@@ -2106,14 +2111,14 @@ textarea {
 /* About Company Column */
 .footer-about-desc {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: #5C4E43;
   line-height: 1.7;
   margin-bottom: 1.4rem;
 }
 
 .footer-follow-label {
   font-weight: 700;
-  color: var(--white);
+  color: #1E1610;
   margin-bottom: 0.75rem;
   font-size: 0.9rem;
 }
@@ -2176,7 +2181,7 @@ textarea {
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--white);
+  color: #1E1610;
   margin-bottom: 1.2rem;
   position: relative;
   padding-bottom: 0.6rem;
@@ -2201,7 +2206,7 @@ textarea {
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.65);
+  color: #5C4E43;
   transition: var(--transition-fast);
   text-decoration: none;
   font-size: 0.88rem;
@@ -2234,7 +2239,7 @@ textarea {
   align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: #5C4E43;
 }
 
 .footer-contact-list li i {
@@ -2246,7 +2251,7 @@ textarea {
 }
 
 .footer-contact-list li a {
-  color: rgba(255, 255, 255, 0.75);
+  color: #5C4E43;
   text-decoration: none;
   transition: var(--transition-fast);
 }
@@ -2275,10 +2280,10 @@ textarea {
 
 /* Footer Bottom */
 .footer-bottom {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.04);
   padding: 1.4rem 0;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #6C5E52;
   text-align: center;
 }
 
