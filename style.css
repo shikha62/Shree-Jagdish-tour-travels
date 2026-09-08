@@ -615,6 +615,12 @@ textarea {
 }
 
 /* === BOOKING WIDGET === */
+.booking-section {
+  padding: 3rem 0 5rem;
+  position: relative;
+  z-index: 10;
+}
+
 .booking-card {
   background: var(--white);
   border-radius: var(--radius-xl);
@@ -753,6 +759,45 @@ textarea {
   margin-top: 0.5rem;
 }
 
+.input-locked-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-locked-wrapper .form-input {
+  padding-right: 4.8rem;
+}
+
+.locked-badge {
+  position: absolute;
+  right: 0.65rem;
+  background: rgba(15, 27, 45, 0.08);
+  color: var(--navy);
+  border: 1px solid rgba(15, 27, 45, 0.15);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.55rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  pointer-events: none;
+}
+
+.locked-badge i {
+  color: var(--primary);
+  font-size: 0.7rem;
+}
+
+.field-hint {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  display: block;
+}
+
 .indore-lock-badge {
   font-size: 0.72rem;
   color: #D97706;
@@ -806,6 +851,25 @@ textarea {
   font-size: 0.92rem;
   color: #78350F;
   line-height: 1.5;
+}
+
+.indore-badge {
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.indore-badge i {
+  color: var(--primary);
 }
 
 /* === STATS BAR === */
@@ -2553,8 +2617,8 @@ textarea {
 
   /* Booking Card */
   .booking-section {
-    margin-top: -2rem;
-    padding: 0 0 3rem;
+    margin-top: 0;
+    padding: 1.5rem 0 3rem;
   }
 
   .booking-header {
@@ -2699,19 +2763,16 @@ textarea {
     display: flex;
   }
 
-  /* Floating WA button positioned above sticky bar */
+  /* On mobile, WhatsApp is already prominent in the sticky bottom bar, so hide floating WA */
   .floating-wa-right {
-    bottom: 4.8rem;
-    right: 1rem;
-    width: 48px;
-    height: 48px;
-    font-size: 1.35rem;
+    display: none !important;
   }
 
-  /* Scroll-top button positioned above sticky bar */
+  /* Scroll-top button positioned cleanly above sticky bar */
   .scroll-top-btn {
     bottom: 4.8rem;
-    left: 1rem;
+    right: 1rem;
+    left: auto;
     width: 42px;
     height: 42px;
   }
